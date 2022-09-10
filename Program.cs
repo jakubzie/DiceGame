@@ -10,10 +10,12 @@ namespace ProgramNumeroUno
 
     class Program
     {
-        static int Roll()
+        //it doesn't work with function because function creates new Random instance each time. it creates it in the same moment
+        //so it produces the same "random" number
+        static int Roll(int min, int max)
         {
             Random roll = new Random();
-            return roll.Next(1,6);
+            return roll.Next() * (max - min) + min;
         }
 
         static void Main(string[] args)
@@ -25,8 +27,10 @@ namespace ProgramNumeroUno
                 Console.Write("Wpisz cokolwiek aby rzuciæ kostk¹: ");
                 if (Console.ReadLine() != "")
                 {
-                    int userRoll = Roll(), aiRoll = Roll();
-                    Console.WriteLine("Twój rzut: " + userRoll+ " || Rzut komputera: " +aiRoll);
+                    Random roll = new Random();
+                    int userRoll = roll.Next(1,6);
+                    int aiRoll = roll.Next(1,6);
+                    Console.WriteLine("\nTwój rzut: " + userRoll+ " || Rzut komputera: " +aiRoll);
                     if(userRoll > aiRoll)
                     {
                         userWin++;
@@ -49,7 +53,7 @@ namespace ProgramNumeroUno
                 {
                     Console.WriteLine("Pole nie mo¿e byæ puste!!");
                 }
-                Console.WriteLine("Twoje punkty: " + userWin + " || Punkty komputera: " + aiWin+ "\n"); 
+                Console.WriteLine("Twoje punkty: " + userWin + " || Punkty komputera: " + aiWin+ "\n\n------\n"); 
             }
             if(userWin > aiWin)
             {
@@ -64,7 +68,7 @@ namespace ProgramNumeroUno
                 Console.WriteLine("Remis!\n");
             }
 
-            Console.Write("Wpisz cokolwiek aby zakoñczyæ");
+            Console.Write("Wpisz cokolwiek aby zakoñczyæ: ");
             Console.ReadLine();
         }
     }
