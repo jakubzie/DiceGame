@@ -1,3 +1,0 @@
-1. losowanie dwóch liczb
-2. porównanie
-3. wyznaczenie zwyciêzcy

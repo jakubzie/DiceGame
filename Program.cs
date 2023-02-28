@@ -34,12 +34,12 @@ namespace ProgramNumeroUno
                     if(userRoll > aiRoll)
                     {
                         userWin++;
-                        Console.WriteLine("Wygra³eœ ten rzut!");
+                        Console.WriteLine("Wygra³eœ w tym rzucie!");
                     }
                     else if (aiRoll > userRoll)
                     {
                         aiWin++;
-                        Console.WriteLine("Komputer wygra³ ten rzut!");
+                        Console.WriteLine("Komputer wygra³ w tym rzucie!");
                     }
                     else
                     {
